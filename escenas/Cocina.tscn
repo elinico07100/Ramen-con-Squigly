@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ca3hmw4qvk5id"]
+
+[ext_resource type="PackedScene" uid="uid://dsyrjm05ad64" path="res://escenas/huevo.tscn" id="1_h1uck"]
+[ext_resource type="PackedScene" uid="uid://cwx862d0minqp" path="res://escenas/olla.tscn" id="2_hfuib"]
+[ext_resource type="PackedScene" uid="uid://c71fto4so050f" path="res://escenas/fideo.tscn" id="3_hfuib"]
+
+[node name="Node2D" type="Node2D" unique_id=616542106]
+
+[node name="Area2D3" parent="." unique_id=1391862358 instance=ExtResource("3_hfuib")]
+position = Vector2(460, 176)
+
+[node name="Area2D" parent="." unique_id=418432861 instance=ExtResource("1_h1uck")]
+position = Vector2(310, 230)
+scale = Vector2(0.23999876, 0.23999876)
+
+[node name="Area2D2" parent="." unique_id=280011581 instance=ExtResource("2_hfuib")]
+z_index = 5
+z_as_relative = false
+position = Vector2(522, 565)
+
+[node name="Control" type="Control" parent="." unique_id=2125000395]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1211593270]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

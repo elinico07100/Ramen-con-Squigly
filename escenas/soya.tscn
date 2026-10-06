@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b31d18b8fbo2q"]
+
+[ext_resource type="Script" uid="uid://bi5wh2a7j3qff" path="res://fideo.gd" id="1_m5iq6"]
+[ext_resource type="Texture2D" uid="uid://4lkenme4c5uv" path="res://Imagen/fideos.png" id="2_3nsnt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kjmp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3nsnt")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjjse"]
+radius = 23.267324
+height = 66.29396
+
+[node name="Area2D" type="Area2D" unique_id=1391862358]
+scale = Vector2(0.19999911, 0.19999911)
+script = ExtResource("1_m5iq6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=614149453]
+position = Vector2(58, 63)
+sprite_frames = SubResource("SpriteFrames_0kjmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=10922630]
+position = Vector2(68.99999, -47.99999)
+rotation = -0.5305801
+scale = Vector2(6.1272783, 1.0428606)
+shape = SubResource("CapsuleShape2D_tjjse")
