@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://brrf3j448v5n4"]
+
+[ext_resource type="Script" uid="uid://bcedmnxda24ny" path="res://Menu.gd" id="1_hw27t"]
+[ext_resource type="Texture2D" uid="uid://ca7qic4d3m0cm" path="res://Imagen/UI/BtnJugar.png" id="2_37x5u"]
+[ext_resource type="Texture2D" uid="uid://683nabdr1053" path="res://Imagen/cocina.png" id="2_gglsf"]
+[ext_resource type="Texture2D" uid="uid://bf56h2ufswocd" path="res://Imagen/UI/BtnJpressed.png" id="3_pg16i"]
+
+[node name="Control" type="Control" unique_id=868794933]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hw27t")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1221275824]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gglsf")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="." unique_id=1544870480]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=238488156]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 371.0
+offset_right = 665.0
+offset_bottom = 648.0
+
+[node name="BtnJugar" type="TextureButton" parent="VBoxContainer" unique_id=1512212893]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("2_37x5u")
+texture_pressed = ExtResource("3_pg16i")
+
+[node name="BtnSalir" type="Button" parent="VBoxContainer" unique_id=889265496]
+layout_mode = 2
+text = "Salir"
