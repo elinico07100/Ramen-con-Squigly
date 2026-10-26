@@ -6,9 +6,9 @@ extends Area2D
 
 const GRAVEDAD = 1500.0
 
+var velo = Vector2.ZERO 
 var arrastrando = false
 var cayendo = false
-var velocidad = 0.0
 var offset = Vector2.ZERO
 var es_original = true          
 var pos_inicial = Vector2.ZERO  
@@ -23,11 +23,12 @@ func _ready():
 func _ya_esta():
 	var olla = get_tree().get_first_node_in_group("olla")
 	if olla == null:
-		return
+		return false
 	for ing in olla.ingredientes:
 		if ing == tipo:
 			return true
 	return false
+
 
 func _crear_copia():           
 	var copia = load(scene_file_path).instantiate()
@@ -35,8 +36,8 @@ func _crear_copia():
 	copia.global_position = pos_inicial
 	copia.pos_inicial = pos_inicial
 
+
 func _input_event(_viewport, event, _shape_idx):
-	# Se ejecuta cuando hay un evento de mouse SOBRE este nodo
 	if event is InputEventMouseButton \
 			and event.button_index == MOUSE_BUTTON_LEFT \
 			and event.pressed\
@@ -49,13 +50,12 @@ func _input_event(_viewport, event, _shape_idx):
 			es_original = false
 			_crear_copia.call_deferred()
 		cayendo = false
-		velocidad = 0.0
+		velo = Vector2.ZERO # Reseteamos el vector de velocidad al agarrarlo
 		offset = global_position - get_global_mouse_position()
 		z_index = 10
 
 
 func _input(event):
-	# Se ejecuta con CUALQUIER evento, esté el mouse donde esté
 	if event is InputEventMouseButton \
 			and event.button_index == MOUSE_BUTTON_LEFT \
 			and not event.pressed \
@@ -67,15 +67,24 @@ func _input(event):
 
 func _process(delta):
 	var olla = get_tree().get_first_node_in_group("olla")
-	if olla.contador != orden:
-		input_pickable = false
-	else:
-		input_pickable = true
+	if olla != null: 
+		if olla.contador != orden:
+			input_pickable = false
+		else:
+			input_pickable = true
+			
 	if arrastrando:
 		global_position = get_global_mouse_position() + offset
 	elif cayendo:
 		input_pickable = false
-		velocidad += GRAVEDAD * delta
-		global_position.y += velocidad * delta
-		if global_position.y > 800:   # un poco más abajo del borde de la pantalla
+		
+		
+		velo.y += GRAVEDAD * delta
+		global_position += velo * delta 
+		
+		if global_position.y > 800:
 			queue_free()
+			
+
+func saltito():
+	velo = Vector2(400, -1000) 

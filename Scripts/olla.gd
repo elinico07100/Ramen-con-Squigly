@@ -10,9 +10,15 @@ func _ready() -> void:
 
 func _on_area_entered(area):
 	if area.cayendo == true:
-		ingredientes.append(area.tipo)
-		print(ingredientes)
-		area.queue_free()
-		contador += 1
-		print(contador)
+		var esta = area.tipo in ingredientes
+		
+		
+		if esta == true:
+			area.saltito()
+		else:
+			ingredientes.append(area.tipo)
+			area.queue_free()
+			contador += 1
+			print(ingredientes, contador)
+		
 		

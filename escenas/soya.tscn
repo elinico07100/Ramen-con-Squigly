@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://et68yjwj2but" path="res://Imagen/gotads.png" id="2_3nsnt"]
 [ext_resource type="Texture2D" uid="uid://cj76yxwj7yoob" path="res://Imagen/soya.webp" id="2_m5iq6"]
-[ext_resource type="Script" uid="uid://db0c1duk1k5iy" path="res://soya.gd" id="4_x4sjv"]
+[ext_resource type="Script" uid="uid://db0c1duk1k5iy" path="res://Scripts/soya.gd" id="4_x4sjv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0kjmp"]
 animations = [{

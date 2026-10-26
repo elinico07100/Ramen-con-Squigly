@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://lngnrnkwnerm"]
 
-[ext_resource type="Script" uid="uid://dsuv1a5hleku4" path="res://puerro.gd" id="1_d1p2f"]
+[ext_resource type="Script" uid="uid://dsuv1a5hleku4" path="res://Scripts/puerro.gd" id="1_d1p2f"]
 [ext_resource type="Texture2D" uid="uid://dm1hu0yg5yap6" path="res://Imagen/puerro.png" id="2_757lq"]
 [ext_resource type="Texture2D" uid="uid://b536xmfif6lq" path="res://Imagen/minip.png" id="3_jks3n"]
 
