@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dsyrjm05ad64" path="res://escenas/huevo.tscn" id="1_h1uck"]
 [ext_resource type="PackedScene" uid="uid://cwx862d0minqp" path="res://escenas/olla.tscn" id="2_hfuib"]
 [ext_resource type="PackedScene" uid="uid://c71fto4so050f" path="res://escenas/fideo.tscn" id="3_hfuib"]
+[ext_resource type="PackedScene" uid="uid://b31d18b8fbo2q" path="res://escenas/soya.tscn" id="4_om58g"]
+[ext_resource type="PackedScene" uid="uid://tk1si7ma1dvp" path="res://escenas/chanchi.tscn" id="5_et24b"]
+[ext_resource type="Texture2D" uid="uid://dtosbqt3bx554" path="res://Imagen/baconnn.png" id="6_78lid"]
+[ext_resource type="PackedScene" uid="uid://lngnrnkwnerm" path="res://escenas/puerro.tscn" id="7_g1mka"]
 
 [node name="Node2D" type="Node2D" unique_id=616542106]
 
@@ -10,7 +14,7 @@
 position = Vector2(460, 176)
 
 [node name="Area2D" parent="." unique_id=418432861 instance=ExtResource("1_h1uck")]
-position = Vector2(310, 230)
+position = Vector2(309.00003, 223)
 scale = Vector2(0.23999876, 0.23999876)
 
 [node name="Area2D2" parent="." unique_id=280011581 instance=ExtResource("2_hfuib")]
@@ -29,3 +33,18 @@ mouse_filter = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Area2D4" parent="." unique_id=435986253 instance=ExtResource("4_om58g")]
+position = Vector2(687, 139)
+
+[node name="Area2D5" parent="." unique_id=445373217 instance=ExtResource("5_et24b")]
+position = Vector2(593, 250)
+
+[node name="Baconnn" type="Sprite2D" parent="." unique_id=1905431980]
+visible = false
+position = Vector2(586.99994, 257)
+scale = Vector2(0.43846154, 0.43214285)
+texture = ExtResource("6_78lid")
+
+[node name="puerro" parent="." unique_id=1277187283 instance=ExtResource("7_g1mka")]
+position = Vector2(836, 204)

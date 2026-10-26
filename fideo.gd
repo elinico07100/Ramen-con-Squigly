@@ -15,7 +15,9 @@ var pos_inicial = Vector2.ZERO
 
 func _ready():              
 	pos_inicial = global_position
-	
+	$PDfideos.visible = true
+	$tenedor.visible = false
+
 	
 func _ya_esta():
 	var olla = get_tree().get_first_node_in_group("olla")
@@ -39,6 +41,9 @@ func _input_event(_viewport, event, _shape_idx):
 			and event.pressed\
 			and _ya_esta() == false:
 		arrastrando = true
+		$PDfideos.visible = false
+		$tenedor.visible = true
+		
 		if es_original:
 			es_original = false
 			_crear_copia.call_deferred()

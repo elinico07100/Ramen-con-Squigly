@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bi5wh2a7j3qff" path="res://fideo.gd" id="1_0kjmp"]
 [ext_resource type="Texture2D" uid="uid://4lkenme4c5uv" path="res://Imagen/fideos.png" id="2_0kjmp"]
+[ext_resource type="Texture2D" uid="uid://c5ifysyg0r8r6" path="res://Imagen/fideop.png" id="3_07sgk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0kjmp"]
 animations = [{
@@ -14,20 +15,25 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjjse"]
-radius = 23.267324
-height = 66.29396
+[sub_resource type="CircleShape2D" id="CircleShape2D_26iph"]
+radius = 72.84629
 
 [node name="Area2D" type="Area2D" unique_id=1391862358]
 scale = Vector2(0.11999895, 0.19999911)
 script = ExtResource("1_0kjmp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=614149453]
+[node name="tenedor" type="AnimatedSprite2D" parent="." unique_id=614149453]
+visible = false
 position = Vector2(58, 63)
 sprite_frames = SubResource("SpriteFrames_0kjmp")
 
+[node name="PDfideos" type="Sprite2D" parent="." unique_id=1235868255]
+position = Vector2(0, 3.8146973e-06)
+scale = Vector2(2.0486255, 1.1472262)
+texture = ExtResource("3_07sgk")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=10922630]
-position = Vector2(68.99999, -47.99999)
-rotation = -0.5305801
-scale = Vector2(6.1272783, 1.0428606)
-shape = SubResource("CapsuleShape2D_tjjse")
+position = Vector2(-25.000221, 15.000076)
+rotation = -3.1875405
+scale = Vector2(3.3881886, 1.7428567)
+shape = SubResource("CircleShape2D_26iph")
