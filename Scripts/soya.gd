@@ -1,8 +1,8 @@
 extends Area2D
 
 @export var suelo_y: float = 600.0
-@export var tipo = "huevo"
-@export var orden = 0
+@export var tipo = "soya"
+@export var orden = 2
 
 const GRAVEDAD = 1500.0
 
@@ -13,8 +13,12 @@ var offset = Vector2.ZERO
 var es_original = true          
 var pos_inicial = Vector2.ZERO  
 
+
 func _ready():      
 	pos_inicial = global_position
+	$soya.visible = false
+	$Gotads.visible = true
+	
 
 func _ya_esta():
 	var olla = get_tree().get_first_node_in_group("olla")
@@ -38,6 +42,9 @@ func _input_event(_viewport, event, _shape_idx):
 			and event.pressed\
 			and _ya_esta() == false:
 		arrastrando = true
+		$soya.visible = true
+		$Gotads.visible = false
+		 
 		if es_original:
 			es_original = false
 			_crear_copia.call_deferred()

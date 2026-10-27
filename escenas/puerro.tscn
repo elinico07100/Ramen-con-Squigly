@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://lngnrnkwnerm"]
+
+[ext_resource type="Script" uid="uid://dsuv1a5hleku4" path="res://Scripts/puerro.gd" id="1_d1p2f"]
+[ext_resource type="Texture2D" uid="uid://dm1hu0yg5yap6" path="res://Imagen/puerro.png" id="2_757lq"]
+[ext_resource type="Texture2D" uid="uid://b536xmfif6lq" path="res://Imagen/minip.png" id="3_jks3n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iqhlg"]
+radius = 28.425343
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_me6ct"]
+height = 76.51593
+
+[node name="puerro" type="Area2D" unique_id=1277187283]
+script = ExtResource("1_d1p2f")
+
+[node name="Puerro" type="Sprite2D" parent="." unique_id=1459861170]
+position = Vector2(-3.8146973e-06, 0)
+scale = Vector2(0.45, 0.5107143)
+texture = ExtResource("2_757lq")
+
+[node name="Minip" type="Sprite2D" parent="." unique_id=2065785473]
+visible = false
+position = Vector2(10, -3)
+scale = Vector2(0.10070678, 0.13688214)
+texture = ExtResource("3_jks3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1993157711]
+position = Vector2(19.999998, -26)
+rotation = -2.4257538
+shape = SubResource("CircleShape2D_iqhlg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1935179978]
+position = Vector2(-20, 23.000002)
+rotation = 0.7513175
+shape = SubResource("CapsuleShape2D_me6ct")

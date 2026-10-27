@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwx862d0minqp"]
 
-[ext_resource type="Script" uid="uid://b6u6rq5w5gubl" path="res://olla.gd" id="1_4fkwt"]
+[ext_resource type="Script" uid="uid://b6u6rq5w5gubl" path="res://Scripts/olla.gd" id="1_4fkwt"]
 [ext_resource type="Texture2D" uid="uid://df3h8g2yb6qvw" path="res://Imagen/olla.png" id="1_q2bw8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwbdx"]

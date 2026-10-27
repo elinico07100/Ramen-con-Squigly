@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://tk1si7ma1dvp"]
+
+[ext_resource type="Texture2D" uid="uid://bwcu6xibr7be3" path="res://Imagen/chanchi.png" id="1_2vftt"]
+[ext_resource type="Texture2D" uid="uid://dtosbqt3bx554" path="res://Imagen/baconnn.png" id="1_8dl7p"]
+[ext_resource type="Script" uid="uid://cpnt6ln3wgtj2" path="res://Scripts/chanchi.gd" id="1_hjmk6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0rnr"]
+size = Vector2(94, 61.5)
+
+[node name="Area2D" type="Area2D" unique_id=445373217]
+script = ExtResource("1_hjmk6")
+
+[node name="Baconnn" type="Sprite2D" parent="." unique_id=2073136533]
+visible = false
+position = Vector2(-4.000004, 8.999996)
+scale = Vector2(0.5923077, 0.6535714)
+texture = ExtResource("1_8dl7p")
+
+[node name="Chanchi" type="Sprite2D" parent="." unique_id=1086164018]
+position = Vector2(4.999996, 0)
+scale = Vector2(0.41101682, 0.34772727)
+texture = ExtResource("1_2vftt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1206706030]
+position = Vector2(2, -3.75)
+shape = SubResource("RectangleShape2D_e0rnr")
