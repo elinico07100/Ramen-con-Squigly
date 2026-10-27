@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cyawhe8dqgotd"]
+
+[ext_resource type="Texture2D" uid="uid://61vecdq1mj7j" path="res://Imagen/squigly.png" id="1_shtx7"]
+[ext_resource type="Script" uid="uid://cesdwpekmfd6o" path="res://escenas/squigly.gd" id="1_ubbww"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ubbww"]
+bounce = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubbww"]
+atlas = ExtResource("1_shtx7")
+region = Rect2(84, 0, 84, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6sk1"]
+atlas = ExtResource("1_shtx7")
+region = Rect2(168, 0, 84, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk355"]
+atlas = ExtResource("1_shtx7")
+region = Rect2(0, 64, 84, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2lnv"]
+atlas = ExtResource("1_shtx7")
+region = Rect2(84, 64, 84, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sty5"]
+atlas = ExtResource("1_shtx7")
+region = Rect2(168, 64, 84, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md3a7"]
+atlas = ExtResource("1_shtx7")
+region = Rect2(0, 0, 84, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tj6i"]
+atlas = ExtResource("1_shtx7")
+region = Rect2(84, 0, 84, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qqd1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubbww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6sk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk355")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2lnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sty5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md3a7")
+}],
+"loop": 1,
+"name": &"Golpe",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tj6i")
+}],
+"loop": 1,
+"name": &"squigly",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3qqd1"]
+radius = 15.033297
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1779855028]
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_ubbww")
+lock_rotation = true
+script = ExtResource("1_ubbww")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=143218998]
+texture_filter = 1
+position = Vector2(-25, -17)
+sprite_frames = SubResource("SpriteFrames_3qqd1")
+animation = &"Golpe"
+frame = 5
+frame_progress = 0.033325154
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1770080299]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_3qqd1")

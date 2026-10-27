@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dsyrjm05ad64" path="res://escenas/huevo.tscn" id="1_h1uck"]
 [ext_resource type="PackedScene" uid="uid://cwx862d0minqp" path="res://escenas/olla.tscn" id="2_hfuib"]
 [ext_resource type="PackedScene" uid="uid://c71fto4so050f" path="res://escenas/fideo.tscn" id="3_hfuib"]
+[ext_resource type="PackedScene" uid="uid://cyawhe8dqgotd" path="res://escenas/squigly.tscn" id="4_om58g"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qqd1"]
+distance = -645.0
 
 [node name="Node2D" type="Node2D" unique_id=616542106]
 
@@ -29,3 +33,11 @@ mouse_filter = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=414578961]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1707323906]
+shape = SubResource("WorldBoundaryShape2D_3qqd1")
+
+[node name="RigidBody2D" parent="." unique_id=1779855028 instance=ExtResource("4_om58g")]
+position = Vector2(688, 555)
