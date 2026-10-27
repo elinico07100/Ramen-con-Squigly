@@ -38,6 +38,7 @@ func _crear_copia():
 
 
 func _input_event(_viewport, event, _shape_idx):
+	var squigly = get_tree().get_first_node_in_group("squigly")
 	if event is InputEventMouseButton \
 			and event.button_index == MOUSE_BUTTON_LEFT \
 			and event.pressed\
@@ -53,12 +54,26 @@ func _input_event(_viewport, event, _shape_idx):
 		velo = Vector2.ZERO # Reseteamos el vector de velocidad al agarrarlo
 		offset = global_position - get_global_mouse_position()
 		z_index = 10
-
+	var olla = get_tree().get_first_node_in_group("olla")
+	if event is InputEventMouseButton \
+			and event.button_index == MOUSE_BUTTON_LEFT \
+			and event.pressed:
+		if _ya_esta()== true or olla.contador != orden:
+			squigly.golpear()
+			await squigly.anim.animation_finished 
+			squigly.anim.play("squigly")
+	
+		
+	
+		
+	
+	
+			
 
 func _input(event):
 	if event is InputEventMouseButton \
 			and event.button_index == MOUSE_BUTTON_LEFT \
-			and not event.pressed \
+			and not event.pressed\
 			and arrastrando:
 		arrastrando = false
 		cayendo = true
@@ -66,12 +81,7 @@ func _input(event):
 
 
 func _process(delta):
-	var olla = get_tree().get_first_node_in_group("olla")
-	if olla != null: 
-		if olla.contador != orden:
-			input_pickable = false
-		else:
-			input_pickable = true
+	
 			
 	if arrastrando:
 		global_position = get_global_mouse_position() + offset

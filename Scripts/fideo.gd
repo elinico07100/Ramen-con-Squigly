@@ -11,7 +11,9 @@ var cayendo = false
 var velocidad = 0.0
 var offset = Vector2.ZERO
 var es_original = true          
-var pos_inicial = Vector2.ZERO  
+var pos_inicial = Vector2.ZERO 
+@onready var olla = get_tree().get_first_node_in_group("olla")
+ 
 
 func _ready():              
 	pos_inicial = global_position
@@ -39,7 +41,8 @@ func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 			and event.button_index == MOUSE_BUTTON_LEFT \
 			and event.pressed\
-			and _ya_esta() == false:
+			and _ya_esta() == false\
+			and olla.contador == orden:
 		arrastrando = true
 		$PDfideos.visible = false
 		$tenedor.visible = true
@@ -51,6 +54,15 @@ func _input_event(_viewport, event, _shape_idx):
 		velocidad = 0.0
 		offset = global_position - get_global_mouse_position()
 		z_index = 10
+	var olla = get_tree().get_first_node_in_group("olla")
+	var squigly = get_tree().get_first_node_in_group("squigly")
+	if event is InputEventMouseButton \
+			and event.button_index == MOUSE_BUTTON_LEFT \
+			and event.pressed:
+		if _ya_esta()== true or olla.contador != orden:
+			squigly.golpear()
+			await squigly.anim.animation_finished 
+			squigly.anim.play("squigly")
 
 
 func _input(event):
@@ -65,11 +77,6 @@ func _input(event):
 
 
 func _process(delta):
-	var olla = get_tree().get_first_node_in_group("olla")
-	if olla.contador != orden:
-		input_pickable = false
-	else:
-		input_pickable = true
 	if arrastrando:
 		global_position = get_global_mouse_position() + offset
 	elif cayendo:

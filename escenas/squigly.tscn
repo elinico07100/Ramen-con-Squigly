@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cyawhe8dqgotd"]
 
 [ext_resource type="Texture2D" uid="uid://61vecdq1mj7j" path="res://Imagen/squigly.png" id="1_shtx7"]
-[ext_resource type="Script" uid="uid://cesdwpekmfd6o" path="res://escenas/squigly.gd" id="1_ubbww"]
+[ext_resource type="Script" uid="uid://cesdwpekmfd6o" path="res://Scripts/squigly.gd" id="1_ubbww"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ubbww"]
 bounce = 0.5
@@ -55,7 +55,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_md3a7")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Golpe",
 "speed": 12.0
 }, {
@@ -71,7 +71,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_3qqd1"]
 radius = 15.033297
 
-[node name="RigidBody2D" type="RigidBody2D" unique_id=1779855028]
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1779855028 groups=["squigly"]]
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_ubbww")
 lock_rotation = true

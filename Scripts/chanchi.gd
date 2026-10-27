@@ -6,6 +6,7 @@ extends Area2D
 
 const GRAVEDAD = 1500.0
 
+@onready var olla = get_tree().get_first_node_in_group("olla")
 var arrastrando = false
 var cayendo = false
 var velocidad = 0.0
@@ -39,7 +40,8 @@ func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 			and event.button_index == MOUSE_BUTTON_LEFT \
 			and event.pressed\
-			and _ya_esta() == false:
+			and _ya_esta() == false\
+			and olla.contador == orden:
 		arrastrando = true
 		$Chanchi.visible = false
 		$Baconnn.visible = true
@@ -51,6 +53,15 @@ func _input_event(_viewport, event, _shape_idx):
 		velocidad = 0.0
 		offset = global_position - get_global_mouse_position()
 		z_index = 10
+	var olla = get_tree().get_first_node_in_group("olla")
+	var squigly = get_tree().get_first_node_in_group("squigly")
+	if event is InputEventMouseButton \
+			and event.button_index == MOUSE_BUTTON_LEFT \
+			and event.pressed:
+		if _ya_esta()== true or olla.contador != orden:
+			squigly.golpear()
+			await squigly.anim.animation_finished 
+			squigly.anim.play("squigly")
 
 
 func _input(event):
@@ -65,11 +76,6 @@ func _input(event):
 
 
 func _process(delta):
-	var olla = get_tree().get_first_node_in_group("olla")
-	if olla.contador != orden:
-		input_pickable = false
-	else:
-		input_pickable = true
 	if arrastrando:
 		global_position = get_global_mouse_position() + offset
 	elif cayendo:

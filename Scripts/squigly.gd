@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+@export var tipo = "squigly"
 @onready var anim = $AnimatedSprite2D
 var mouse_anchor: StaticBody2D
 var joint: PinJoint2D
@@ -48,3 +49,6 @@ func detener_arrastre() -> void:
 
 func golpear():
 	anim.play("Golpe")
+	
+func quemao():
+	linear_velocity = Vector2(300, -800)
