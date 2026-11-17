@@ -24,4 +24,6 @@ func _on_area_entered(area):
 			contador += 1
 			print(ingredientes, contador)
 		
-		
+func _process(delta: float) -> void:
+	if contador == 5:
+		get_tree().change_scene_to_file("res://escenas/Completo.tscn")

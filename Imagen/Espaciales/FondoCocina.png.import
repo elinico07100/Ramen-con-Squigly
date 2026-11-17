@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doswo4glxyc28"
-path="res://.godot/imported/sopa.jpg-08732d433792b411ed7a278c68bb328f.ctex"
+uid="uid://gpm7534xbkaf"
+path="res://.godot/imported/FondoCocina.png-e083be983d7c00d7eeffcca4142946ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagen/sopa.jpg"
-dest_files=["res://.godot/imported/sopa.jpg-08732d433792b411ed7a278c68bb328f.ctex"]
+source_file="res://Imagen/Espaciales/FondoCocina.png"
+dest_files=["res://.godot/imported/FondoCocina.png-e083be983d7c00d7eeffcca4142946ff.ctex"]
 
 [params]
 

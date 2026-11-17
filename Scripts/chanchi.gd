@@ -4,7 +4,7 @@ extends Area2D
 @export var tipo = "chanchi"
 @export var orden = 3
 
-const GRAVEDAD = 1500.0
+const GRAVEDAD = 1000.0
 
 @onready var olla = get_tree().get_first_node_in_group("olla")
 var arrastrando = false

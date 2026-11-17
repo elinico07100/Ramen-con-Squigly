@@ -4,7 +4,7 @@ extends Area2D
 @export var tipo = "puerro"
 @export var orden = 4
 
-const GRAVEDAD = 1500.0
+const GRAVEDAD = 1000.0
 
 var arrastrando = false
 var cayendo = false

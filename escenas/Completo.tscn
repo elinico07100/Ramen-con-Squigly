@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bk10j12xilg5"]
+
+[ext_resource type="Texture2D" uid="uid://gpm7534xbkaf" path="res://Imagen/Espaciales/FondoCocina.png" id="1_3xopj"]
+[ext_resource type="PackedScene" uid="uid://cyawhe8dqgotd" path="res://escenas/squigly.tscn" id="2_4ahnr"]
+[ext_resource type="Texture2D" uid="uid://d1wtgar54gjxl" path="res://Imagen/Espaciales/imagen-removebg-preview(1).png" id="3_4ahnr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3qqd1"]
+font_size = 50
+font_color = Color(0.6666667, 0.07450981, 1, 1)
+shadow_size = 7
+shadow_color = Color(0.00068738795, 0.00029213034, 0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fi07c"]
+distance = -645.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7724w"]
+distance = 20.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5peyy"]
+distance = 18.0
+
+[node name="Control" type="Control" unique_id=517027090]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=6191806]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3xopj")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="." unique_id=1665970324]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -4.0
+offset_right = 783.0
+offset_bottom = 133.0
+text = "TERMINASTE!!"
+label_settings = SubResource("LabelSettings_3qqd1")
+
+[node name="RigidBody2D" parent="." unique_id=1779855028 instance=ExtResource("2_4ahnr")]
+position = Vector2(389, 163)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=494096825]
+position = Vector2(-1, -5)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1147961003]
+position = Vector2(232, -422)
+shape = SubResource("WorldBoundaryShape2D_fi07c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1696906863]
+position = Vector2(0, 145)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_7724w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1850516944]
+position = Vector2(455, 150)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_5peyy")
+
+[node name="ImagenRemovebgPreview(1)" type="Sprite2D" parent="." unique_id=227751709]
+position = Vector2(229, 188)
+scale = Vector2(0.31502965, 0.2988346)
+texture = ExtResource("3_4ahnr")

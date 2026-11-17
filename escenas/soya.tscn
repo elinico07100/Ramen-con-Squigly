@@ -1,43 +1,58 @@
 [gd_scene format=3 uid="uid://b31d18b8fbo2q"]
 
-[ext_resource type="Texture2D" uid="uid://et68yjwj2but" path="res://Imagen/gotads.png" id="2_3nsnt"]
-[ext_resource type="Texture2D" uid="uid://cj76yxwj7yoob" path="res://Imagen/soya.webp" id="2_m5iq6"]
+[ext_resource type="Texture2D" uid="uid://buyoyvn47bal1" path="res://Imagen/Espaciales/Ingredientes.png" id="2_m5iq6"]
 [ext_resource type="Script" uid="uid://db0c1duk1k5iy" path="res://Scripts/soya.gd" id="4_x4sjv"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0kjmp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nsnt"]
+atlas = ExtResource("2_m5iq6")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qqd1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_m5iq6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_3nsnt")
+"texture": SubResource("AtlasTexture_3nsnt")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjjse"]
-radius = 23.592651
-height = 303.2292
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4sjv"]
+atlas = ExtResource("2_m5iq6")
+region = Rect2(192, 0, 64, 64)
 
-[node name="Area2D" type="Area2D" unique_id=1391862358]
-scale = Vector2(0.19999911, 0.19999911)
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kjmp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4sjv")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjjse"]
+radius = 4.6276093
+height = 40.51056
+
+[node name="Soya" type="Area2D" unique_id=1391862358]
 script = ExtResource("4_x4sjv")
 
-[node name="Gotads" type="Sprite2D" parent="." unique_id=968485790]
-position = Vector2(75.00037, 90.0004)
-scale = Vector2(0.29166755, 0.3076923)
-texture = ExtResource("2_3nsnt")
+[node name="Gotads" type="AnimatedSprite2D" parent="." unique_id=1582752020]
+visible = false
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_3qqd1")
 
 [node name="soya" type="AnimatedSprite2D" parent="." unique_id=614149453]
-position = Vector2(74.00049, 95.00042)
-scale = Vector2(1.1230806, 1.0357189)
+texture_filter = 1
+position = Vector2(7.6293945e-06, -5.000023)
 sprite_frames = SubResource("SpriteFrames_0kjmp")
+animation = &"new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=10922630]
-position = Vector2(70.00031, 95.00042)
+position = Vector2(0, -7.6293945e-06)
 rotation = -1.5777776
 scale = Vector2(6.467616, 0.9891009)
 shape = SubResource("CapsuleShape2D_tjjse")

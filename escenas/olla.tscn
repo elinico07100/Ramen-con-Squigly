@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://cwx862d0minqp"]
 
 [ext_resource type="Script" uid="uid://b6u6rq5w5gubl" path="res://Scripts/olla.gd" id="1_4fkwt"]
-[ext_resource type="Texture2D" uid="uid://df3h8g2yb6qvw" path="res://Imagen/olla.png" id="1_q2bw8"]
+[ext_resource type="Texture2D" uid="uid://dxbthwhdmccj7" path="res://Imagen/Espaciales/tazon.png" id="2_2tkfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwbdx"]
-size = Vector2(45.103664, 65.38635)
+size = Vector2(23.517803, 4.3521733)
 
-[node name="Area2D" type="Area2D" unique_id=280011581 groups=["olla"]]
+[node name="Tazón" type="Area2D" unique_id=280011581 groups=["olla"]]
 script = ExtResource("1_4fkwt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=596723270]
-scale = Vector2(0.5999974, 0.5999974)
-texture = ExtResource("1_q2bw8")
+texture_filter = 1
+position = Vector2(0, -5)
+texture = ExtResource("2_2tkfs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1699789594]
-position = Vector2(-2, 24.781467)
+position = Vector2(1, -10.000001)
 scale = Vector2(2.3067632, 0.94152576)
 shape = SubResource("RectangleShape2D_vwbdx")
+one_way_collision = true
+one_way_collision_direction = Vector2(0, -1)

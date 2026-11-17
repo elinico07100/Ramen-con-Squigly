@@ -4,7 +4,7 @@ extends Area2D
 @export var tipo = "huevo"
 @export var orden = 0
 
-const GRAVEDAD = 1500.0
+const GRAVEDAD = 1000.0
 
 var velo = Vector2.ZERO 
 var arrastrando = false
@@ -16,8 +16,8 @@ var pos_inicial = Vector2.ZERO
 
 func _ready():      
 	pos_inicial = global_position
-	$AnimatedSprite2D.visible = false
-	$PixelArtChickenNestAndEggsPng.visible = true
+	$Huevo.visible = false
+	$CestaHuevos.visible = true
 	
 
 func _ya_esta():
@@ -44,8 +44,8 @@ func _input_event(_viewport, event, _shape_idx):
 			and event.pressed\
 			and _ya_esta() == false:
 		arrastrando = true
-		$PixelArtChickenNestAndEggsPng.visible = false
-		$AnimatedSprite2D.visible = true
+		$CestaHuevos.visible = false
+		$Huevo.visible = true
 		 
 		if es_original:
 			es_original = false

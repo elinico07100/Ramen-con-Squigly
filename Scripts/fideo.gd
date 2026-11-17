@@ -4,7 +4,7 @@ extends Area2D
 @export var tipo = "fideos"
 @export var orden = 1
 
-const GRAVEDAD = 1500.0
+const GRAVEDAD = 1000.0
 
 var arrastrando = false
 var cayendo = false
@@ -17,8 +17,8 @@ var pos_inicial = Vector2.ZERO
 
 func _ready():              
 	pos_inicial = global_position
-	$PDfideos.visible = true
-	$tenedor.visible = false
+	$PlatoFideos.visible = true
+	$Fideos.visible = false
 
 	
 func _ya_esta():
@@ -44,8 +44,8 @@ func _input_event(_viewport, event, _shape_idx):
 			and _ya_esta() == false\
 			and olla.contador == orden:
 		arrastrando = true
-		$PDfideos.visible = false
-		$tenedor.visible = true
+		$PlatoFideos.visible = false
+		$Fideos.visible = true
 		
 		if es_original:
 			es_original = false
@@ -54,7 +54,7 @@ func _input_event(_viewport, event, _shape_idx):
 		velocidad = 0.0
 		offset = global_position - get_global_mouse_position()
 		z_index = 10
-	var olla = get_tree().get_first_node_in_group("olla")
+	
 	var squigly = get_tree().get_first_node_in_group("squigly")
 	if event is InputEventMouseButton \
 			and event.button_index == MOUSE_BUTTON_LEFT \

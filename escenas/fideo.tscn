@@ -1,14 +1,32 @@
 [gd_scene format=3 uid="uid://c71fto4so050f"]
 
 [ext_resource type="Script" uid="uid://bi5wh2a7j3qff" path="res://Scripts/fideo.gd" id="1_0kjmp"]
-[ext_resource type="Texture2D" uid="uid://4lkenme4c5uv" path="res://Imagen/fideos.png" id="2_0kjmp"]
-[ext_resource type="Texture2D" uid="uid://c5ifysyg0r8r6" path="res://Imagen/fideop.png" id="3_07sgk"]
+[ext_resource type="Texture2D" uid="uid://buyoyvn47bal1" path="res://Imagen/Espaciales/Ingredientes.png" id="2_vq244"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq244"]
+atlas = ExtResource("2_vq244")
+region = Rect2(256, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0kjmp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0kjmp")
+"texture": SubResource("AtlasTexture_vq244")
+}],
+"loop": 1,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07sgk"]
+atlas = ExtResource("2_vq244")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vwbdx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07sgk")
 }],
 "loop": 1,
 "name": &"default",
@@ -16,24 +34,25 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_26iph"]
-radius = 72.84629
+radius = 22.335396
 
-[node name="Area2D" type="Area2D" unique_id=1391862358]
-scale = Vector2(0.11999895, 0.19999911)
+[node name="Fideo" type="Area2D" unique_id=1391862358]
 script = ExtResource("1_0kjmp")
 
-[node name="tenedor" type="AnimatedSprite2D" parent="." unique_id=614149453]
+[node name="Fideos" type="AnimatedSprite2D" parent="." unique_id=614149453]
 visible = false
-position = Vector2(58, 63)
+texture_filter = 1
+position = Vector2(-3, 11)
 sprite_frames = SubResource("SpriteFrames_0kjmp")
+animation = &"new_animation_1"
 
-[node name="PDfideos" type="Sprite2D" parent="." unique_id=1235868255]
-position = Vector2(0, 3.8146973e-06)
-scale = Vector2(2.0486255, 1.1472262)
-texture = ExtResource("3_07sgk")
+[node name="PlatoFideos" type="AnimatedSprite2D" parent="." unique_id=1181376806]
+texture_filter = 1
+position = Vector2(1, -10)
+sprite_frames = SubResource("SpriteFrames_vwbdx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=10922630]
-position = Vector2(-25.000221, 15.000076)
-rotation = -3.1875405
-scale = Vector2(3.3881886, 1.7428567)
+position = Vector2(-2.3841858e-07, -9.536743e-07)
+rotation = -1.5610131
+scale = Vector2(-0.71254414, 1.2817554)
 shape = SubResource("CircleShape2D_26iph")

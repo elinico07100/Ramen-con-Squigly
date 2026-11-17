@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cesdwpekmfd6o" path="res://Scripts/squigly.gd" id="1_ubbww"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ubbww"]
+friction = 0.6
 bounce = 0.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ubbww"]

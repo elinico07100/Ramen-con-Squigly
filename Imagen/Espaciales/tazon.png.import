@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtosbqt3bx554"
-path="res://.godot/imported/baconnn.png-2c5e47f3a8d1119c0ed6694774d26168.ctex"
+uid="uid://dxbthwhdmccj7"
+path="res://.godot/imported/tazon.png-3f4a3935aca24386be34100aa5defb0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagen/baconnn.png"
-dest_files=["res://.godot/imported/baconnn.png-2c5e47f3a8d1119c0ed6694774d26168.ctex"]
+source_file="res://Imagen/Espaciales/tazon.png"
+dest_files=["res://.godot/imported/tazon.png-3f4a3935aca24386be34100aa5defb0c.ctex"]
 
 [params]
 

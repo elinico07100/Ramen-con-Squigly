@@ -1,35 +1,56 @@
 [gd_scene format=3 uid="uid://dsyrjm05ad64"]
 
 [ext_resource type="Script" uid="uid://xv6unfk5s6yr" path="res://Scripts/huevo.gd" id="1_2gnpj"]
-[ext_resource type="Texture2D" uid="uid://c1g5shvp7jtau" path="res://Imagen/huevo.png" id="2_26iph"]
-[ext_resource type="Texture2D" uid="uid://dyr22gmqxkb3f" path="res://Imagen/pixel-art-chicken-nest-and-eggs-png.webp" id="3_26iph"]
+[ext_resource type="Texture2D" uid="uid://buyoyvn47bal1" path="res://Imagen/Espaciales/Ingredientes.png" id="2_2gnpj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkilg"]
+atlas = ExtResource("2_2gnpj")
+region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vwbdx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_26iph")
+"texture": SubResource("AtlasTexture_hkilg")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"huevo",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abe5w"]
+atlas = ExtResource("2_2gnpj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qqd1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abe5w")
+}],
+"loop": 1,
+"name": &"idleCesta",
 "speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3qqd1"]
-radius = 153.09702
+radius = 36.686157
 
-[node name="Area2D" type="Area2D" unique_id=418432861]
-scale = Vector2(0.23999971, 0.23999971)
+[node name="Huevo" type="Area2D" unique_id=418432861]
 script = ExtResource("1_2gnpj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=195688012]
+[node name="Huevo" type="AnimatedSprite2D" parent="." unique_id=195688012]
 visible = false
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_vwbdx")
+animation = &"huevo"
 
-[node name="PixelArtChickenNestAndEggsPng" type="Sprite2D" parent="." unique_id=679316216]
-position = Vector2(4.166687, 0)
-texture = ExtResource("3_26iph")
+[node name="CestaHuevos" type="AnimatedSprite2D" parent="." unique_id=1265734853]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_3qqd1")
+animation = &"idleCesta"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1599271414]
-scale = Vector2(1, 0.35999763)
+scale = Vector2(0.8555132, 0.8599989)
 shape = SubResource("CircleShape2D_3qqd1")
